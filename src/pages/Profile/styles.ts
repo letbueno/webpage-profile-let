@@ -27,7 +27,7 @@ export const Stuff = styled(Box)`
   text-align: center;
   @media (max-width: 768px) {
     width: 90%;
-    margin: 20% 0;
+    margin: 20% 0 10% 0;
   }
 `;
 
