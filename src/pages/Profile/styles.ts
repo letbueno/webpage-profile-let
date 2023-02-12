@@ -8,7 +8,6 @@ export const PixelFont = css`
 export const Container = styled(Box)`
   display: flex;
   flex-direction: column;
-  width: 50%;
 
   a {
     text-decoration: none;
@@ -26,6 +25,9 @@ export const Stuff = styled(Box)`
   align-items: center;
   padding: 5%;
   text-align: center;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 export const Wrapper = styled(Box)`
@@ -60,6 +62,9 @@ export const Me = styled.img`
   border: 3px dashed #9795ef;
   margin-top: -25%;
   background: #fff;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 export const BadgeContainer = styled.div`
@@ -67,18 +72,28 @@ export const BadgeContainer = styled.div`
 `;
 
 export const Link = styled.a`
+  ${PixelFont}
   color: #00da93;
-  font-weight: 600;
-  font-size: 14px;
+`;
+
+export const CopyLink = styled.p`
+  ${PixelFont}
+  text-decoration: underline;
+  font-size: 12px;
+  color: #9795ef;
+  cursor: pointer;
+`;
+
+export const ContainerCopy = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 12px;
 `;
 
 export const SocialMedia = styled.div`
-  display: flex;
+  display: block;
   flex-direction: row;
-  justify-content: center;
   margin: 24px 0;
-  align-items: center;
-  width: 100%;
 `;
 
 export const Bold = styled.p`
@@ -87,16 +102,9 @@ export const Bold = styled.p`
   font-size: 12px;
   font-weight: 700;
 `;
-export const SocialMediaIcon = styled.img`
-  height: 40px;
-  width: 40px;
-`;
 
-export const TypeingContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
 export const Typeing = styled.p`
+  ${PixelFont}
   overflow: hidden;
   white-space: nowrap;
   width: 30em;
@@ -124,6 +132,11 @@ export const Typeing = styled.p`
 `;
 
 export const ContainerIcon = styled.a`
-  margin-right: 24px;
+  margin: 0 16px;
+  margin-top 12px;
   cursor: pointer;
+
+  svg {
+    margin-top: 12px;
+  }
 `;
