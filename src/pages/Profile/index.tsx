@@ -46,7 +46,13 @@ function Profile() {
         </S.Description>
         <S.Bold>Spawn:</S.Bold>
         <S.Description>
-          <S.Link href="https://ribon.io/">Ribon</S.Link>
+          <S.Link
+            href="https://ribon.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ribon
+          </S.Link>
         </S.Description>
         <S.ContainerCopy>
           <S.Description>letbuenom@icloud.com</S.Description>
