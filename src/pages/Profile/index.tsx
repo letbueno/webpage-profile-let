@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import Me from "../../assets/me.svg";
+import Me from "../../assets/me.png";
 import {
   Badge,
   Popover,
@@ -34,7 +34,7 @@ function Profile() {
   return (
     <S.Stuff>
       <S.Wrapper>
-        <S.Me src={Me}></S.Me>
+        <S.Me src={Me} alt="Credits by AlliMocha"></S.Me>
         <S.Title>Hi, I'm Leticia</S.Title>
         <S.BadgeContainer>
           <Badge colorScheme="pink" margin={2}>
