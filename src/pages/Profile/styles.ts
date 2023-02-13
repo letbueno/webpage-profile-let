@@ -24,6 +24,7 @@ export const Stuff = styled(Box)`
   border: 3px dashed #9795ef;
   align-items: center;
   padding: 5%;
+  margin-top: 5%;
   text-align: center;
   @media (max-width: 768px) {
     width: 90%;
@@ -94,7 +95,12 @@ export const ContainerCopy = styled.div`
 export const SocialMedia = styled.div`
   display: block;
   flex-direction: row;
-  margin: 24px 0;
+  margin-top: 24px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 24px 0;
+  }
 `;
 
 export const Bold = styled.p`
