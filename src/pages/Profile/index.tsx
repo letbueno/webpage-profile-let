@@ -1,8 +1,15 @@
 import * as S from "./styles";
 import Me from "../../assets/me.svg";
-import { Badge } from "@chakra-ui/react";
+import {
+  Badge,
+  Popover,
+  PopoverBody,
+  PopoverContent,
+  PopoverTrigger,
+} from "@chakra-ui/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 
 function Profile() {
   function calculateAge() {
@@ -13,8 +20,15 @@ function Profile() {
     return Math.floor(ageInYears / 365);
   }
 
+  const [closePopover, setClosePopover] = useState(false);
+
   function copy() {
+    setClosePopover(true);
     navigator.clipboard.writeText("letbuenom@icloud.com");
+
+    setTimeout(() => {
+      setClosePopover(false);
+    }, 2000);
   }
 
   return (
@@ -36,7 +50,7 @@ function Profile() {
             Bookstan
           </Badge>
         </S.BadgeContainer>
-        <S.Bold>Coordinates:</S.Bold>
+        <S.Bold>Spawn:</S.Bold>
         <S.Description>Tocantins, Brazil</S.Description>
         <S.Bold>Level:</S.Bold>
         <S.Description>{calculateAge()}</S.Description>
@@ -44,7 +58,9 @@ function Profile() {
         <S.Description>
           <S.Typeing>Full-stack Developer</S.Typeing>
         </S.Description>
-        <S.Bold>Spawn:</S.Bold>
+        <S.Bold>Class: </S.Bold>
+        <S.Description>INTP-T</S.Description>
+        <S.Bold>Main Quest:</S.Bold>
         <S.Description>
           <S.Link
             href="https://ribon.io/"
@@ -54,12 +70,24 @@ function Profile() {
             Ribon
           </S.Link>
         </S.Description>
-        <S.ContainerCopy>
-          <S.Description>letbuenom@icloud.com</S.Description>
-          {"("}
-          <S.CopyLink onClick={copy}>copy it</S.CopyLink>
-          {")"}
-        </S.ContainerCopy>
+        <Popover isOpen={closePopover}>
+          <PopoverTrigger>
+            <S.ContainerCopy>
+              <S.Description>letbuenom@icloud.com</S.Description>
+              {"("}
+              <S.CopyLink onClick={copy}>copy it</S.CopyLink>
+              {")"}
+            </S.ContainerCopy>
+          </PopoverTrigger>
+          <PopoverContent
+            width={100}
+            fontSize="12px"
+            marginTop={-3}
+            fontFamily="PF Tempesta Seven Condensed"
+          >
+            <PopoverBody>Copy!</PopoverBody>
+          </PopoverContent>
+        </Popover>
         <S.SocialMedia>
           <S.ContainerIcon
             href="https://github.com/letbueno"
